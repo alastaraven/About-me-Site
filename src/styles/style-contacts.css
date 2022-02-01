@@ -1,0 +1,560 @@
+/* Обнуление дефолтных свойств */
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	position: relative;
+	transition: 0.5s ease-in-out;
+	/*плавность переходов для всех элементов страницы*/
+}
+
+*::selection {
+	background-color: #22223b;
+	color: #f2e9e4;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f2e9e4;
+	font-family: "Cuprum", "Montserrat", sans-serif;
+	font-size: 62.5%;
+	color: #22223b;
+}
+
+/* Стилизация заголовка на разных экранах */
+
+h1 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 800;
+	font-size: 15rem;
+	text-transform: uppercase;
+	word-break: break-all;
+	transition: none;
+	animation-name: appear;
+	animation-duration: 2s;
+	left: -1rem;
+}
+
+h2 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+@keyframes appear {
+	from {
+		transform: translateY(5rem);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+	h1 {
+		font-size: 10rem;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+	h1 {
+		font-size: 5rem;
+		left: 0;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+	h1 {
+		font-size: 3rem;
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 2rem;
+		left: 0;
+	}
+}
+
+/* Стилизация элементов сайта */
+
+p,
+span {
+	font-family: "Cuprum", sans-serif;
+	font-weight: 400;
+	font-size: 2rem;
+}
+
+ul {
+	list-style-type: none;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	border: solid 0.2rem #22223b;
+	-webkit-box-shadow: -2rem -2rem #9a8c98;
+	-moz-box-shadow: -2rem -2rem #9a8c98;
+	box-shadow: -2rem -2rem #9a8c98;
+}
+
+/* Стилизация ссылок */
+
+.__basic-link:after {
+	display: block;
+	content: "";
+	height: 0.2rem;
+	position: relative;
+	top: 0.5rem;
+	width: 0%;
+	background-color: #9a8c98;
+	transition: width 0.4s ease-in-out;
+	/* плавное изменение ширины, время анимации 0.4 секунды)*/
+}
+
+.__basic-link:hover:after,
+.__basic-link:focus:after {
+	width: 80%;
+}
+
+a {
+	font-family: "Cuprum", sans-serif;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 2rem;
+	color: #22223b;
+	display: inline-block;
+	line-height: 1;
+}
+
+a:hover {
+	color: #9a8c98;
+}
+
+/* Настройка отображения обёртки контента */
+
+.wrapper {
+	margin: 0 auto;
+	padding: 0 auto;
+	width: calc(100% - 5rem);
+	height: 100%;
+	max-width: 100%;
+}
+
+/* Стилизация шапки */
+
+.header {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-bottom: 5%;
+	border-bottom: solid 0.2rem #22223b;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.header__menu {
+	display: block;
+	width: 100%;
+}
+
+.header__menu-items {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	align-items: -webkit-center;
+	vertical-align: middle;
+}
+
+/* Отображение на экранах до 480px */
+
+@media (max-width: 480px) {
+	.header__menu-items {
+		display: flex;
+		display: -webkit-flex;
+		row-gap: 1.5rem;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		align-items: -webkit-center;
+	}
+}
+
+/* Стилизация колонок с контактными иконками*/
+
+.contacts {
+	padding-top: 4rem;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-basis: 50%;
+	align-items: center;
+	justify-content: stretch;
+	gap: 4rem;
+	margin: 0 auto;
+	padding: 0 auto;
+	order: 2;
+}
+
+.contacts i {
+	font-weight: 400;
+	font-size: 4rem;
+}
+
+@media (max-width: 768px) {
+	.contacts {
+		padding-top: 0;
+		padding-bottom: 2rem;
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: stretch;
+	}
+}
+
+/* Стилизация контента */
+
+.hero {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	column-gap: 2rem;
+	align-items: stretch;
+	align-items: -webkit-center;
+}
+
+/* Левая и правая части hero на странице Контактов */
+
+.left-side > p {
+	text-transform: lowercase;
+}
+
+.left-side {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
+	align-items: -webkit-flex-start;
+	order: 1;
+}
+
+.right-side {
+	width: 100%;
+	height: 50em;
+	display: block;
+	order: 3;
+}
+
+.right-side__frame {
+	margin: 0;
+	border: 0.2rem solid #9a8c98;
+}
+
+/* Черта разделительная между p и заголовком */
+
+.left-side::before {
+	content: "";
+	height: 0.2rem;
+	position: relative;
+	top: 3rem;
+	width: 50%;
+	background-color: #9a8c98;
+}
+
+@media screen and (max-width: 768px) {
+	.left-side::before {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero {
+		display: flex;
+		display: -webkit-flex;
+		gap: 2rem;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		align-items: -webkit-flex-start;
+	}
+	.left-side {
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: stretch;
+		order: 1;
+	}
+
+	.right-side {
+		order: 2;
+		padding-left: 0;
+	}
+}
+
+/* Стилизация формы */
+
+input[type="text"],
+select,
+textarea {
+	width: 100%;
+	padding-top: 2rem;
+	padding-left: 2rem;
+	border: none;
+	color: #22223b;
+	background-color: #f2e9e4;
+	border-bottom: 0.2rem solid #9a8c98;
+	resize: vertical;
+	font-size: 2rem;
+	font-family: "Cuprum", sans-serif;
+}
+
+input[type="email"] {
+	width: 100%;
+	padding-top: 2rem;
+	padding-left: 2rem;
+	border: none;
+	background-color: #f2e9e4;
+	border-bottom: 0.2rem solid #9a8c98;
+	resize: vertical;
+	font-size: 2rem;
+	font-family: "Cuprum", sans-serif;
+}
+
+label {
+	font-size: 1.5rem;
+	padding: 2rem;
+	display: inline-block;
+	font-family: "Cuprum", sans-serif;
+}
+
+input[type="submit"] {
+	font-size: 2rem;
+	background-color: #9a8c98;
+	color: #f2e9e4;
+	padding: 2rem 2rem 2rem 2rem;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	text-transform: uppercase;
+	font-family: "Cuprum", sans-serif;
+}
+
+input[type="submit"]:hover {
+	background-color: #22223b;
+	color: #f2e9e4;
+}
+
+.input__wrapper {
+	width: 100%;
+	position: relative;
+	margin: 2rem 0;
+}
+
+.input__file {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+}
+
+.input__file-button-text {
+	line-height: 1;
+}
+
+.input__file-button {
+	width: 100%;
+	height: 3rem;
+	background: #22223b;
+	color: #f2e9e4;
+	font-size: 1.5rem;
+	font-weight: 700;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	cursor: pointer;
+	margin: 0 auto;
+}
+
+.__how-much-pages {
+	margin-top: 2rem;
+	margin-left: 2rem;
+}
+
+.radio__pages {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: baseline;
+}
+
+.form__radio {
+	margin-bottom: 10px;
+}
+.form__radio input[type="radio"] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.form__radio label {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+	user-select: none;
+}
+.form__radio label:before {
+	content: "";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	flex-shrink: 0;
+	flex-grow: 0;
+	margin-right: 0.5em;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 50% 50%;
+	background-color: #f2e9e4;
+	outline: 0.2rem solid #9a8c98;
+}
+
+/* Checked */
+.form__radio input[type="radio"]:checked + label:before {
+	background-color: #22223b;
+	outline: 0.2rem solid #f2e9e4;
+}
+
+/* Hover */
+.form__radio label:hover:before {
+	background-color: #9a8c98;
+}
+
+/* Active */
+.form__radio label:active:before {
+	background-color: #22223b;
+	outline: 0.2rem solid #9a8c98;
+}
+
+/* Focus */
+.form__radio label:focus:before {
+	background-color: #9a8c98;
+	outline: 2rem solid #22223b;
+}
+
+@media screen and (max-width: 480px) {
+	.radio__pages {
+		display: flex;
+		justify-content: left;
+		flex-wrap: wrap;
+		gap: 1rem;
+		flex-direction: row;
+	}
+}
+
+/* Стилизация контейнера с формой */
+
+.container {
+	width: 100%;
+	margin-top: 10%;
+	padding-right: 30%;
+	padding-left: 30%;
+}
+
+.container h2 {
+	margin-bottom: 5%;
+	text-align: center;
+	font-family: "Cuprum", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+	.col-100,
+	input[type="submit"] {
+		width: 100%;
+		margin-top: 0;
+	}
+	.container {
+		width: 100%;
+		padding: 0;
+	}
+}
+
+/* Стилизация подвала */
+
+.footer {
+	margin-top: 5%;
+	padding-top: 2rem;
+	padding-bottom: 5rem;
+	border-top: solid 0.2rem #22223b;
+	height: 5rem;
+	width: 100%;
+}
+
+.footer__links {
+	display: flex;
+	row-gap: 5rem;
+	align-content: flex-start;
+	justify-content: space-between;
+}
+
+.footer__socials {
+	display: flex;
+	gap: 1.5rem;
+	flex-direction: row;
+	justify-content: stretch;
+}
+
+.footer__socials i {
+	font-weight: 400;
+	font-size: 2rem;
+	color: #22223b;
+}
+
+.footer__socials i:hover {
+	color: #9a8c98;
+}
+
+@media screen and (max-width: 480px) {
+	.footer__links {
+		display: flex;
+		display: -webkit-flex;
+		row-gap: 1.5rem;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		align-items: -webkit-center;
+	}
+	.footer__socials {
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: row;
+		gap: 1.5rem;
+		justify-content: center;
+		align-items: center;
+		align-items: -webkit-center;
+	}
+}

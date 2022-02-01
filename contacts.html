@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:
+http://ogp.me/ns/article#">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="og:site_name" content="Веб-разработчик+">
+	<meta name="author" content="https://www.facebook.com/razorbladeshape">
+	<meta name=‘Document-state’ content=‘Dynamic’>
+	<meta name=‘Keywords’ content=‘веб-разработчик’>
+	<meta name=Robots content=‘noindex,follow’>
+	<meta name=‘URL’ content=‘http://www.mydomain.ru’>
+	<meta property="og:type" content="website" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://#/open-graphprotocol/" />
+	<meta property="og:title" content="CSS+HTML" />
+	<meta property="og:description" content="Сайт начинающего веб-разработчика">
+	<meta property="og:image" content="https://#/open-graphprotocol/
+img/css-best-browser-850.png" />
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:type" content="image/png" />
+	<meta property="fb:app_id" content="1494084460xxxxxx">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+	<link rel="stylesheet" href="src\styles\style-contacts.css">
+	<link rel=‘shortcut-icon’ href=‘img/favicon.ico’>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cuprum:wght@400;600&family=Montserrat&display=swap"
+		rel="stylesheet">
+	<title>Мои координаты</title>
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<!-- Шапка с навигацией по сайту -->
+
+		<header>
+			<div class="header">
+				<nav class="header__menu">
+					<ul class="header__menu-items">
+						<li class="header__menu-item">
+							<a class="__basic-link" href="index.html">Главная</a>
+						</li>
+						<li class="header__menu-item">
+							<a class="__basic-link" href="about-me.html">Про меня</a>
+						</li>
+						<li class="header__menu-item">
+							<a class="__basic-link" href="contacts.html">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Заголовок с контентом -->
+
+		<div class="hero">
+			<div class="left-side">
+				<p>Оставляю свои</p>
+				<h1>Ссылки для связи</h1>
+			</div>
+			<div class="contacts">
+				<div class="contacts__tg">
+					<a href="https://t.me/alastaraven" target="_blank"><i class="fab fa-telegram"></i></a>
+				</div>
+				<div class="contacts__in">
+					<a href="https://instagram.com/alastaraven" target="_blank"><i class="fab fa-instagram"></i></a>
+				</div>
+				<div class="contacts__wa">
+					<a href="https://wa.me/89892770957" target="_blank"><i class="fab fa-whatsapp"></i></a>
+				</div>
+			</div>
+			<div class="right-side">
+				<iframe class="right-side__frame" seamless scrolling="auto" src="img\map-krd.png" width="100%"
+					height="100%">
+					<p>Ваш браузер не поддерживает плавающие фреймы!</p>
+				</iframe>
+			</div>
+		</div>
+
+		<!-- Контейнер с формой -->
+
+		<div class="container">
+			<h2>Пожалуйста, ответьте на несколько вопросов:</h2>
+			<form action="" enctype="multipart/form-data" method="post">
+				<div class="row">
+					<div class="col-100">
+						<input type="text" id="fname" name="firstname" placeholder="Как вас зовут?" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-100">
+						<input type="email" id="email" name="email" placeholder="Ваш email?" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-100">
+						<select id="type" name="type">
+							<option value="default" hidden>Тип сайта?</option>
+							<option value="landing">Лендинг</option>
+							<option value="visitлa">Сайт-визитка</option>
+							<option value="katalog">Сайт-каталог</option>
+							<option value="magazin">Интернет-магазин</option>
+						</select>
+					</div>
+					<div class="row">
+						<div class="col-100">
+							<p class="__how-much-pages">Сколько будет страниц?</p>
+							<div class="radio__pages">
+								<div class="form__radio">
+									<input type="radio" name="pages" id="1-page" value="Одна" checked>
+									<label for="1-page">
+										<p>1</p>
+									</label>
+								</div>
+
+								<div class="form__radio">
+									<input type="radio" name="pages" id="2-page" value="Две">
+									<label for="2-page">
+										<p>2</p>
+									</label>
+								</div>
+
+								<div class="form__radio">
+									<input type="radio" name="pages" id="3-page" value="Три">
+									<label for="3-page">
+										<p>3</p>
+									</label>
+								</div>
+
+								<div class="form__radio">
+									<input type="radio" name="pages" id="4-page" value="Четыре">
+									<label for="4-page">
+										<p>4</p>
+									</label>
+								</div>
+
+								<div class="form__radio">
+									<input type="radio" name="pages" id="5-page" value="Пять">
+									<label for="5-page">
+										<p>5</p>
+									</label>
+								</div>
+
+								<div class="form__radio">
+									<input type="radio" name="pages" id="5+pages" value="Более 5">
+									<label for="5+pages">
+										<p>5 и более</p>
+									</label>
+								</div>
+
+								<div class="form__radio">
+									<input type="radio" name="pages" id="10+pages" value="Более 10">
+									<label for="10+pages">
+										<p>От 10</p>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input__wrapper">
+						<input name="file" type="file" name="file" id="input__file" class="input input__file" multiple>
+						<label for="input__file" class="input__file-button">
+							<span class="input__file-button-text">Загрузите файл(ы)</span>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-100">
+						<textarea id="subject" name="subject" placeholder="Особые пожелания"
+							style="min-height:5rem; max-height: 10rem;"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<input type="submit" value="Отправить">
+				</div>
+			</form>
+		</div>
+
+		<!-- Подвал со ссылками в соц сети -->
+
+		<footer>
+			<div class="footer">
+				<div class="footer__links">
+					<p>alastaraven &copy; 2021 </p>
+					<a class="__basic-link" href="#">Вверх</a>
+					<ul class="footer__socials">
+						<li><a href="https://t.me/alastaraven" target="_blank"><i class="fab fa-telegram"></i></a></li>
+						<li><a href="https://instagram.com/alastaraven" target="_blank"><i class="fab fa-instagram"></i></a>
+						</li>
+						<li><a href="https://wa.me/89892770957" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>

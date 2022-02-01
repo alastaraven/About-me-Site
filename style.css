@@ -1,0 +1,397 @@
+/* Обнуление дефолтных свойств */
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	position: relative;
+	transition: 0.5s ease-in-out;
+	/*плавность переходов для всех элементов страницы*/
+}
+
+*::selection {
+	background-color: #22223b;
+	color: #f2e9e4;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f2e9e4;
+	font-family: "Cuprum", "Montserrat", sans-serif;
+	font-size: 62.5%;
+	color: #22223b;
+}
+
+/* Стилизация заголовка на разных экранах */
+
+h1 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 800;
+	font-size: 15rem;
+	text-transform: uppercase;
+	word-break: break-all;
+	height: 5rem;
+	display: block;
+	transition: none;
+	animation-name: appear;
+	animation-duration: 2s;
+	left: -1rem;
+}
+
+@keyframes appear {
+	from {
+		transform: translateY(5rem);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@media screen and (min-width: 1260px) and (max-width: 1920px) {
+	h1 {
+		font-size: 10rem;
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1260px) {
+	h1 {
+		font-size: 7.5rem;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+	h1 {
+		font-size: 5rem;
+		left: 0;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+	h1 {
+		font-size: 3rem;
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 2rem;
+		left: 0;
+	}
+}
+
+/* Стилизация элементов сайта */
+
+p,
+span {
+	font-family: "Cuprum", sans-serif;
+	font-weight: 400;
+	font-size: 2rem;
+}
+
+ul {
+	list-style-type: none;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	outline: solid 0.2rem #22223b;
+	-webkit-box-shadow: -2rem -2rem #9a8c98;
+	-moz-box-shadow: -2rem -2rem #9a8c98;
+	box-shadow: -2rem -2rem #9a8c98;
+}
+
+/* Стилизация ссылок */
+
+.__basic-link:after {
+	display: block;
+	content: "";
+	height: 0.2rem;
+	position: relative;
+	top: 0.5rem;
+	width: 0%;
+	background-color: #9a8c98;
+	transition: width 0.4s ease-in-out;
+	/* плавное изменение ширины, время анимации 0.4 секунды)*/
+}
+
+.__basic-link:hover:after,
+.__basic-link:focus:after {
+	width: 80%;
+}
+
+a {
+	font-family: "Cuprum", sans-serif;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 2rem;
+	color: #22223b;
+	display: inline-block;
+	line-height: 1;
+}
+
+a :hover {
+	color: #9a8c98;
+}
+
+/* Настройка отображения обёртки контента */
+
+.wrapper {
+	margin: 0 auto;
+	padding: 0 auto;
+	width: calc(100% - 5rem);
+	height: 100%;
+	max-width: 100%;
+}
+
+/* Стилизация шапки */
+
+.header {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-bottom: 5%;
+	border-bottom: solid 0.2rem #22223b;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.header__menu {
+	display: block;
+	width: 100%;
+}
+
+.header__menu-items {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	align-items: -webkit-center;
+	vertical-align: middle;
+}
+
+/* Отображение на экранах до 480px */
+
+@media (max-width: 480px) {
+	.header__menu-items {
+		display: flex;
+		display: -webkit-flex;
+		row-gap: 1.5rem;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		align-items: -webkit-center;
+	}
+}
+
+/* Стилизация контента */
+
+.hero {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	column-gap: 10rem;
+	align-items: flex-start;
+	align-items: -webkit-center;
+}
+
+/* Левая и правая части hero на главной странице*/
+
+.left-side > p {
+	text-transform: lowercase;
+}
+
+.left-side {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
+	align-items: -webkit-flex-start;
+}
+
+/* Черта разделительная между p и h1 */
+
+.left-side::before {
+	content: "";
+	height: 0.2rem;
+	position: relative;
+	top: 3rem;
+	width: 70%;
+	background-color: #9a8c98;
+}
+
+@media screen and (max-width: 768px) {
+	.left-side::before {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero {
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: column;
+		gap: 3rem;
+		justify-content: flex-start;
+		align-items: flex-start;
+		align-items: -webkit-flex-start;
+	}
+	.left-side {
+		width: 100%;
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: stretch;
+		order: 1;
+	}
+
+	.right-side {
+		order: 2;
+	}
+}
+
+/* Стилизация списка под заголовком */
+
+.info {
+	display: flex;
+	word-break: break-all;
+	margin-top: 20rem;
+}
+
+.info__list li {
+	font-size: 2rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: right;
+	color: #9a8c98;
+}
+
+.info__list-elements {
+	margin-bottom: 1rem;
+}
+
+.info__list-elements::after {
+	content: "";
+	display: block;
+	width: 100%;
+	color: #9a8c98;
+	position: absolute;
+	border-bottom: 0.2rem solid #9a8c98;
+}
+
+@media screen and (max-width: 1024px) {
+	.info {
+		margin-top: 10rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.info {
+		margin-top: 0rem;
+	}
+}
+
+/* Стилизация кнопки */
+
+.btn__more {
+	margin-top: 2rem;
+	display: inline-block;
+}
+
+.btn__more-about {
+	padding: 1rem 3rem 1rem 3rem;
+	border: 0.2rem solid #9a8c98;
+	background-color: transparent;
+	transition: all 0.5s;
+	cursor: pointer;
+	font-family: "Cuprum", sans-serif;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 2rem;
+	color: #22223b;
+	display: inline-block;
+	line-height: 1;
+}
+
+.btn__more-about:hover {
+	color: #f2e9e4;
+	background-color: #22223b;
+	border: 0.2rem solid #f2e9e4;
+}
+
+@media screen and (max-width: 768px) {
+	.btn__more-about {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+}
+
+/* Стилизация подвала */
+
+.footer {
+	margin-top: 5%;
+	padding-top: 2rem;
+	padding-bottom: 5rem;
+	border-top: solid 0.2rem #22223b;
+	height: 5rem;
+	width: 100%;
+}
+
+.footer__links {
+	display: flex;
+	row-gap: 5rem;
+	align-content: flex-start;
+	justify-content: space-between;
+}
+
+.footer__socials {
+	display: flex;
+	gap: 1.5rem;
+	flex-direction: row;
+	justify-content: stretch;
+}
+
+.footer__socials i {
+	font-weight: 400;
+	font-size: 2rem;
+	color: #22223b;
+}
+
+.footer__socials i:hover {
+	color: #9a8c98;
+}
+
+@media screen and (max-width: 480px) {
+	.footer__links {
+		display: flex;
+		display: -webkit-flex;
+		row-gap: 1.5rem;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		align-items: -webkit-center;
+	}
+	.footer__socials {
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: row;
+		gap: 1.5rem;
+		justify-content: center;
+		align-items: center;
+		align-items: -webkit-center;
+	}
+}
